@@ -1,0 +1,49 @@
+
+.login-card h3{
+    font-family: Roboto;
+    font-size: 2.0rem;
+}
+.login-card p{
+    font-family: Roboto;
+    padding-right: 50px;
+}
+.loginBtn-facebook{
+    background-color: #4c69ba;
+    background-image: linear-gradient(#4c69ba,#3b55a0);
+    text-shadow: 0 -1px 0 #354c8c;
+}
+.loginBtn{
+    box-sizing: border-box;
+    position: relative;
+    padding: 0 15px 0 64px;
+    border: none;
+    text-align: left;
+    line-height: 50px;
+    white-space: nowrap;
+    border-radius: .2em;
+    font-size: 18px;
+    color: #fff;
+    max-width: 300px;
+    width: 100%;    
+    cursor: pointer;
+    font-family: Roboto;
+    font-weight: 300;   
+    margin-top: 10px;   
+}
+.loginBtn:focus{
+    outline: none;
+}
+.loginBtn-facebook:before {
+    content: "\f09a";
+    font-family: FontAwesome;
+    border-right: 1px solid #364e92;
+}
+.loginBtn:before {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 47px;
+    height: 100%;
+    text-align: center;
+}
