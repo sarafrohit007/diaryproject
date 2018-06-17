@@ -7,30 +7,10 @@ import { HeaderComponent } from './header/header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ContentComponent } from './content/content.component';
 import { LoginComponent } from './login/login.component';
-import {
-  SocialLoginModule,
-  AuthServiceConfig,
-  GoogleLoginProvider,
-  FacebookLoginProvider,
-} from "angular5-social-login";
+import { FacebookSigninComponent } from './login/facebook-signin/facebook-signin.component';
+
 import { ProfileComponent } from './profile/profile.component';
 
-
-export function getAuthServiceConfigs() {
-  let config = new AuthServiceConfig(
-      [
-        {
-          id: FacebookLoginProvider.PROVIDER_ID,
-          provider: new FacebookLoginProvider("1829331310702257")
-        }
-        // {
-        //   id: GoogleLoginProvider.PROVIDER_ID,
-        //   provider: new GoogleLoginProvid("Your-Google-Client-Id")
-        // },
-      ]
-  );
-  return config;
-}
 
 const appRoutes: Routes = [
   {
@@ -39,12 +19,12 @@ const appRoutes: Routes = [
     data: { title: 'Dashboard' }
   },
   { path: 'login',
-  component: LoginComponent,
-  data: { title: 'Login' }
+    component: LoginComponent,
+    data: { title: 'Login' }
   },
   { path: 'profile',
-  component: ProfileComponent,
-  data: { title: 'My Profile' }
+    component: ProfileComponent,
+    data: { title: 'My Profile' }
   }
 ];
 
@@ -57,21 +37,14 @@ const appRoutes: Routes = [
     SidebarComponent,
     ContentComponent,
     LoginComponent,
+    FacebookSigninComponent,
     ProfileComponent
   ],
   imports: [
     BrowserModule,
-    SocialLoginModule,
     RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      appRoutes /* ,{ enableTracing: true } // <-- debugging purposes only */
     )
-  ],
-  providers: [
-    {
-      provide: AuthServiceConfig,
-      useFactory: getAuthServiceConfigs
-    }
   ],
   bootstrap: [AppComponent]
 })
